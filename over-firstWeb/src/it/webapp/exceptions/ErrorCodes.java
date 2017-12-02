@@ -12,6 +12,7 @@ package it.webapp.exceptions;
 /**
  * @author robgion
  *
+ * Interfaccia per i codici errore.
  */
 public interface ErrorCodes {
 
