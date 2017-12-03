@@ -13,6 +13,7 @@ package it.webapp.exceptions;
  * @author robgion
  *
  * Interfaccia per i codici errore.
+ * Molto comoda per evitare duplicazioni.
  */
 public interface ErrorCodes {
 
