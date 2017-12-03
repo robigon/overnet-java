@@ -13,6 +13,7 @@ package it.webapp.exceptions;
  * @author robgion
  *
  * Interfaccia per i codici errore.
+ * Modifica fatta a partire dal brench CR001
  */
 public interface ErrorCodes {
 

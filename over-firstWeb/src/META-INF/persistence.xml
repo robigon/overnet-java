@@ -8,12 +8,6 @@
 	
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		
-		<class>com.opengest.jpa.entities.Cliente</class>
-		<class>com.opengest.jpa.entities.Company</class>
-		<class>com.opengest.jpa.entities.Order</class>
-		<class>com.opengest.jpa.entities.Prodotto</class>
-		<class>com.opengest.jpa.entities.Utente</class>
-		
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		
 		<properties>
