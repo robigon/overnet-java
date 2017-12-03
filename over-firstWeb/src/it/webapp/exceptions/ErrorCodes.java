@@ -15,5 +15,6 @@ package it.webapp.exceptions;
  */
 public interface ErrorCodes {
 
+	/** Codice per errore generico */
 	public static final String ERROR_CODE_GENERIC = "ERR001";
 }
