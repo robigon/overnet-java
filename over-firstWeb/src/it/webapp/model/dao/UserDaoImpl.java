@@ -54,7 +54,7 @@ public class UserDaoImpl implements UserDao {
 			ps.setString(2, password);
 
 			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
+			if (rs.next()) {
 
 				retuser = new UserVo();
 				retuser.setUserId(rs.getLong("id_utente"));

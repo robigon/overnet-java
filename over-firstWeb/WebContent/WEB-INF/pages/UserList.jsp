@@ -34,8 +34,7 @@
 				%>
 
 				<tr>
-					<td><a href="loadUserDetail?userId=<%=u.getUserId()%>"> <%=u.getUsername()%>
-					</a></td>
+					<td><a href="loadUserDetail?userId=<%= u.getUserId()%>"> <%=u.getUsername()%></a></td>
 					<td><%=u.getName()%></td>
 					<td><%=u.getLastName()%></td>
 					<td><a href="loadUserGroups?userId=<%=u.getUserId()%>">Gruppi

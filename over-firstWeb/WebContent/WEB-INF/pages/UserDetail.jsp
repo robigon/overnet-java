@@ -13,6 +13,8 @@
 	UserVo u = (UserVo)request.getAttribute("userDetail");
 %>
 	<form action="saveUserDetail" method="post">
+	
+				<input type="hidden" name="userPk" value="<%=u.getUserId() %>">
 			<div>
 				<label>Username</label>
 				<input type="text" name="username" value="<%=u.getUsername() %>">
