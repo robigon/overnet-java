@@ -1,0 +1,6 @@
+Giornata Nº 1
+Data  Incontro  Risultato
+24/08/2017	Verona	Milan	2	1
+24/08/2017	Sampdoria	Juventus	0	1
+25/08/2017	Inter	Genoa	2	0
+25/08/2017	Torino	Sassuolo	2	0
