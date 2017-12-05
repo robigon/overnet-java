@@ -11,7 +11,7 @@ package it.webapp.exceptions;
 
 /**
  * @author robgion
- *
+ * MODIFICA PER TEST GIT
  */
 public class DatabaseException extends Exception {
 
