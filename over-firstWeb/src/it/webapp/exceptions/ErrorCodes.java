@@ -15,6 +15,8 @@ package it.webapp.exceptions;
  * Interfaccia per i codici errore.
  * Molto comoda per evitare duplicazioni.
  * MODIFICA PER RICONGIUNGIMENTO BRENCH MASTER.
+ * 
+ * MODIFICA A PARTIRE DAL BR002
  */
 public interface ErrorCodes {
 
