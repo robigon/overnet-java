@@ -17,6 +17,7 @@ package it.webapp.exceptions;
  * MODIFICA PER RICONGIUNGIMENTO BRENCH MASTER.
  * 
  * MODIFICA A PARTIRE DAL BR002
+ * MODIFICA FATTA PER TEST
  */
 public interface ErrorCodes {
 
