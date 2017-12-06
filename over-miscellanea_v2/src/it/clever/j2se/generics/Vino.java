@@ -6,5 +6,5 @@ public class Vino implements Bevanda<Vino>{
 	public String toString(){
 		return " una bottiglia di vino";
 	}
-	
+	//KKKK
 }
