@@ -12,6 +12,7 @@ package it.clever.j2se.java8.lambda;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -26,13 +27,13 @@ public class MiscellaneaApp {
 
 	public static void main(String[] args) {
 
-		 runAnonymousClasses();
+//		 runAnonymousClasses();
 
-		// testMapStream();
+//		testMapStream();
 		
 		//runLambdaExpressionExamples();
 
-		// useStreams();
+		 useStreams();
 		
 	}
 
@@ -43,8 +44,21 @@ public class MiscellaneaApp {
 
 		User user = new User("Roberto", "Giontella", 20);
 
+		Worker worker3 = new Worker();
+		worker3.addActionListener(new ActionListenerImpl());
+		
 		// Costruzione e setup dei worker associati ai pulsanti per la stampa
 		Worker worker1 = new Worker();
+		
+		ActionListener commonListner = new ActionListener() {
+			
+			@Override
+			public void performAction(Object target) throws Exception {
+				Printer p = new PrinterService().getPrinter(Printer.PRINTER_TYPE_CONSOLE);
+				p.print(target.toString());
+			}
+		};
+		
 		worker1.addActionListener(new ActionListener() {
 
 			/**
@@ -76,7 +90,6 @@ public class MiscellaneaApp {
 		});
 
 		// ...
-
 		// Codice di attivazione dei due worker
 		try {
 			worker1.executeTask("Hello world!");
@@ -123,7 +136,7 @@ public class MiscellaneaApp {
 		 * Nel caso in cui questo avvenga è necessario utilizzare l'espressione
 		 * lambda completa
 		 */
-		numberList.forEach(s -> System.out.println( s * 10));
+		numberList.forEach(s -> System.out.print( s * 10));
 	}
 
 	/**
@@ -143,7 +156,7 @@ public class MiscellaneaApp {
 		 * 
 		 * 
 		 */
-		List<Integer> evens = Arrays.asList(2, 4, 6); 
+		List<Integer> evens = Arrays.asList(2, 4, 6, 8); 
 		List<Integer> odds = Arrays.asList(3, 5, 7); 
 		List<Integer> primes = Arrays.asList(2, 3, 5, 7, 11);
 		
@@ -172,6 +185,11 @@ public class MiscellaneaApp {
 		 */
 		System.out.println("\n\nSelezione e stampa della lista di stringhe:");
 		nameList.stream().filter((s) -> s.startsWith("S")).forEach(s -> System.out.println(s));
+		
+		for(String s : nameList) {
+			if(s.startsWith("S"))
+				System.out.println();
+		}
 
 		/*
 		 * Esiste la possibilità di applicare un metodo a tutti gli elementi di
@@ -233,8 +251,8 @@ public class MiscellaneaApp {
 	    .filter(user -> user.getEta() > 20)
 	    .flatMap(user -> user.getGroups().stream())
 	    .sorted()
-	    //.distinct()
-	    .limit(2)
+	    .distinct()
+	    .limit(3)
 	    .forEach(System.out::println);
 		
 		

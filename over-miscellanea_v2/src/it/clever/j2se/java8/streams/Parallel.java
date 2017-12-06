@@ -23,27 +23,19 @@ public class Parallel {
 	public static void main(String[] args) {
 		
 		ArrayList<Long> integers = new ArrayList<Long>();
-		for(long i=MAX; i>=1; i--) {
+		for(long i=MAX*10; i>=1; i--) {
 		    integers.add(i);
 		}
 		
-		long start = System.nanoTime();
-		 
-		integers.stream().sorted();
-		 
-		long end = System.nanoTime();
-		 
-		System.out.println("Sequential sort time:"+(end-start));
-		
-		
 		// Test con parallel programming
-		start = System.nanoTime();
-		 
-		integers.parallelStream().sorted();
-		 
-		end = System.nanoTime();
-		 
+		long start = System.nanoTime();
+		
+		integers.stream().sorted();
+		
+		long end = System.nanoTime();
+		
 		System.out.println("Parallel sort time:"+(end-start));
-
+		
+		 
 	}
 }

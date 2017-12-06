@@ -28,7 +28,7 @@ public class ApplicationUI {
 				
 				// Simulazione della chiamata al dao dei customers
 				
-				CustomerService custService = (CustomerService)context.getBean("ustomerService");
+				CustomerService custService = (CustomerService)context.getBean("customerService");
 				custService.findAllcustomers();
 			}
 			

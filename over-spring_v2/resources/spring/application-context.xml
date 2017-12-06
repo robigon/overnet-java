@@ -25,7 +25,7 @@
 
 	<!-- Bean1 dipende dal bean printer tramite costructor-injection -->
 	<bean id="ref1" class="it.clever.spring.ui.Bean1" scope="prototype">
-		<constructor-arg ref="filePrinter" ></constructor-arg>
+		<constructor-arg ref="consolePrinter" ></constructor-arg>
 	</bean>
 	<!-- Bean1 dipende dal bean printer tramite costructor-injection -->
 	<bean id="ref2" class="it.clever.spring.ui.Bean1" scope="prototype">

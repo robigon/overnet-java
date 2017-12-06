@@ -19,6 +19,13 @@ public class Bean2 implements Bean {
 
 	private Bean1 bean1;
 
+	/**
+	 * 
+	 */
+	public Bean2() {
+	}
+	
+	
 	public Bean1 getBean1() {
 		return bean1;
 	}
