@@ -1,13 +1,12 @@
 package it.clever.spring.ui;
 
+import java.util.Scanner;
+
+
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import it.clever.spring.services.CustomerService;
-import it.clever.spring.services.UserService;
-import it.clever.spring.vo.UserVo;
-
-
+import it.clever.spring.services.ImpiegatoService;
 
 public class ApplicationUI {
 
@@ -21,17 +20,11 @@ public class ApplicationUI {
 					"/spring/application-context.xml");
 			
 			// Richiamo in memoria del @Service
-			UserService userService = (UserService) context.getBean("userService");
-			
-			UserVo user = userService.authorize("admin", "admin");
-			if(user != null) {
-				System.out.println("\n" + user + "\n");
-				
-				// Simulazione della chiamata al dao dei customers
-				
-				CustomerService custService = (CustomerService)context.getBean("customerService");
-				custService.findAllcustomers();
-			}
+			ImpiegatoService impiegatoService = (ImpiegatoService) context.getBean("impiegatoService");
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Inserisci un id: ");
+			Long id = Long.parseLong(sc.nextLine());
+			System.out.println(impiegatoService.findImpiegatoById(id));
 			
 		} catch (Exception e) {
 			e.printStackTrace();
