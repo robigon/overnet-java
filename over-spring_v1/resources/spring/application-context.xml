@@ -23,18 +23,4 @@
 	<aop:config proxy-target-class="true" />
 	<context:annotation-config />
 
-	<bean
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="locations" value="classpath:/spring/*.properties" />
-	</bean>
-
-	<!-- DataSource onfig -->
-	<bean id="dataSource" class="it.clever.spring.utils.ConfigBean">
-		<property name="databaseDriver" value="${database.driverClassName}" />
-		<property name="databaseUrl" value="${database.url}" />
-		<property name="databaseUsername" value="${database.username}" />
-		<property name="databasePassword" value="${database.password}" />
-	</bean>
-
-
 </beans>
