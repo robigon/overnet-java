@@ -9,6 +9,8 @@ package it.clever.spring.dao;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 import it.clever.spring.utils.CustomQueryFilter;
 
 /**
@@ -34,5 +36,7 @@ public interface GenericDao<T> {
 	List<T> findAll();   
 	
 	List<T> findAllByFilters(CustomQueryFilter... filters);
+
+	EntityManager getEntityManager();
 
 }

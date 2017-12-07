@@ -51,6 +51,7 @@ public class GenericDaoImpl<T> implements GenericDao<T> {
 		ParameterizedType pt = (ParameterizedType) t;
 		type = (Class) pt.getActualTypeArguments()[0];
 
+//		em = jpaService.getDatabaseConnection();
 	}
 	
 	public T create(final T t) {
@@ -70,6 +71,11 @@ public class GenericDaoImpl<T> implements GenericDao<T> {
 		return this.em.merge(t);
 	}
 
+	@Override
+	public EntityManager getEntityManager() {
+		return em;
+	}
+	
 	/**
 	 * Metodo per la gestione della tipica findAll tramite CriteriaQuery.
 	 */

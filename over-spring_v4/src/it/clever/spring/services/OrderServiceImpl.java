@@ -36,7 +36,8 @@ import it.clever.spring.utils.RequiredTx;
 @Service(value = "orderService")
 //@Transactional(propagation=Propagation.MANDATORY)
 //@Transactional(propagation=Propagation.REQUIRES_NEW)
-@Transactional(propagation=Propagation.NEVER)
+//@Transactional(propagation=Propagation.NEVER)
+@Transactional(propagation=Propagation.REQUIRED)
 public class OrderServiceImpl implements OrderService {
 
 	@Autowired
@@ -90,9 +91,14 @@ public class OrderServiceImpl implements OrderService {
 			
 //			customerDao = null;
 			
-			customerDao.update(customer);
+			try {
+				
+				customerDao.update(customer);
+			} catch (Exception e) {
+				// TODO: handle exception
+				throw new DummyException("Numero ordini non aggiornato ma ordine inserito.");
+			}
 
-			throw new DummyException("Errore generico ");
 			
 		} catch (Exception ex) {
 
